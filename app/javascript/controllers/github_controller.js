@@ -5,7 +5,7 @@ import * as model from "../model";
 export default class extends Controller {
   initialize() {
     console.log(`Accessing commits`);
-    // this.load();
+    this.load();
   }
 
   async load() {
