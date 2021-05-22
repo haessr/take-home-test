@@ -1,5 +1,7 @@
 # README
 
+By default, this app will show commits of https://github.com/haessr/take-home-test
+
 ### Installing Tools
 
 You need Ruby, bundler, node.js,
