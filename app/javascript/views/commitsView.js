@@ -9,7 +9,7 @@ class CommitsView extends View {
   // _data;
 
   addHandlerRender(handlerFunction) {
-    ["load"].forEach((event) =>
+    ["pageShow", "load"].forEach((event) =>
       window.addEventListener(event, handlerFunction)
     );
   }
