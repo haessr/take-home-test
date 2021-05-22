@@ -19,7 +19,7 @@ class CommitsView extends View {
     // refreshBtn.addEventListener("click", function (e) {
     // const btn = e.target.closest(".pagination__btn");
     // if (!btn) return;
-    console.log("Refresh in process");
+    // console.log("Refresh in process");
     // const goToPage = Number(btn.dataset.goto);
     // handlerFunction(goToPage);
     // });
