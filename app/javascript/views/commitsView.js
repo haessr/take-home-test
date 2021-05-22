@@ -14,6 +14,17 @@ class CommitsView extends View {
     );
   }
 
+  addHandlerRefresh(handlerFunction) {
+    // const refreshBtn = document.querySelector(".btn-refresh");
+    // refreshBtn.addEventListener("click", function (e) {
+    // const btn = e.target.closest(".pagination__btn");
+    // if (!btn) return;
+    console.log("Refresh in process");
+    // const goToPage = Number(btn.dataset.goto);
+    // handlerFunction(goToPage);
+    // });
+  }
+
   _generateMarkup() {
     return this._data.map(this._generateMarkupPreview).join("");
   }
