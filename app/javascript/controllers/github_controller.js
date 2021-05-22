@@ -1,5 +1,4 @@
 import { Controller } from "stimulus";
-// import { GITHUB_REPO_URL } from "../config";
 import * as model from "../model";
 
 import commitsView from "../views/commitsView";
@@ -9,6 +8,7 @@ export default class extends Controller {
   static targets = ["inputOwner", "inputRepo", "submitBtn"];
 
   initialize() {
+    commitsView.parentElement = document.querySelector(".results");
     commitsView.addHandlerRender(this.controlAPIResponse);
     paginationView.parentElement = document.querySelector(".pagination");
     paginationView.addHandlerClick(this.controlPagination);

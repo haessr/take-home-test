@@ -12,7 +12,6 @@ class CommitsView extends View {
   }
 
   _generateMarkup() {
-    console.log(this._data);
     return this._data.results
       .map(this._generateMarkupPreview.bind(this._data))
       .join("");
