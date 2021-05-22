@@ -8,7 +8,7 @@ import paginationView from "../views/paginationView";
 export default class extends Controller {
   initialize() {
     console.log(`Accessing commits`);
-    this.controlAPIResponse();
+    commitsView.addHandlerRender(this.controlAPIResponse);
   }
 
   connect() {

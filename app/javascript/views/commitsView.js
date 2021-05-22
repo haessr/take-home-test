@@ -8,6 +8,12 @@ class CommitsView extends View {
   _errorMessage = "Something went wrong!";
   // _data;
 
+  addHandlerRender(handlerFunction) {
+    ["load"].forEach((event) =>
+      window.addEventListener(event, handlerFunction)
+    );
+  }
+
   _generateMarkup() {
     return this._data.map(this._generateMarkupPreview).join("");
   }
