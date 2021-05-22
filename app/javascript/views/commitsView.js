@@ -8,6 +8,12 @@ class CommitsView extends View {
   _errorMessage = "Something went wrong!";
   // _data;
 
+  addHandlerRender(handlerFunction) {
+    ["load"].forEach((event) =>
+      window.addEventListener(event, handlerFunction)
+    );
+  }
+
   _generateMarkup() {
     return this._data.map(this._generateMarkupPreview).join("");
   }
@@ -17,7 +23,7 @@ class CommitsView extends View {
       <li class="list-group-item preview">
         <div class="content row d-flex">
           <div class="section-info">
-            <div class="commit-title h5">
+            <div class="commit-title h6">
               <a href="${commit.url}" target="_blank" class="link-dark">
                 ${truncateString(
                   commit.message.split("\n").slice(0, 1).join(""),

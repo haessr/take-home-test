@@ -2,8 +2,8 @@
 
 .avatar {
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
 }
 
 // .content {
@@ -13,7 +13,8 @@
 .commit-body {
   overflow: auto;
   // overflow-y: scroll;
-  height: 80px;
+  height: 70px;
+  font-size: small;
   // min-height: 60px;
 }
 
@@ -22,6 +23,7 @@
   align-items: center;
   justify-content: center;
   width: 80%;
+  margin-bottom: 50px;
   // background-color: yellow;
 }
 
@@ -44,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  // height: 60px;
   padding: 5px 10px;
 }
 
@@ -75,4 +77,28 @@
 
 .tree-link:hover {
   color: #fff;
+}
+
+.pagination {
+  margin: 20px 0;
+}
+
+.pagination {
+  margin-top: auto;
+  padding: 0 3.5rem;
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &__btn {
+    &--prev {
+      float: left;
+    }
+    &--next {
+      float: right;
+    }
+  }
 }
