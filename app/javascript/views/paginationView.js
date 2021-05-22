@@ -19,20 +19,27 @@ class PaginationView extends View {
     // Page 1, and there are other pages
     if (currentPage === 1 && numPages > 1) {
       return `
+          <button class="btn btn-primary pagination__btn pagination__btn--prev" disabled>
+            <span>&lt; Prev</span>
+          </button>
           <button class="btn btn-primary pagination__btn pagination__btn--prev" data-goto="${
             currentPage + 1
           }">
-            <span>Page ${currentPage + 1} &gt;</span>
+            <span>Next &gt;</span>
           </button>
       `;
     }
     // Last page
     if (currentPage === numPages && numPages > 1) {
       return `
+
           <button class="btn btn-primary pagination__btn pagination__btn--prev" data-goto="${
             currentPage - 1
           }">
-            <span>&lt; Page ${currentPage - 1}</span>
+            <span>&lt; Prev</span>
+          </button>
+          <button class="btn btn-primary pagination__btn pagination__btn--prev" disabled>
+            <span>Next &gt;</span>
           </button>
       `;
     }
@@ -42,12 +49,12 @@ class PaginationView extends View {
           <button class="btn btn-primary pagination__btn pagination__btn--prev" data-goto="${
             currentPage - 1
           }">
-            <span>&lt; Page ${currentPage - 1}</span>
+            <span>&lt; Prev</span>
           </button>
           <button class="btn btn-primary pagination__btn pagination__btn--prev" data-goto="${
             currentPage + 1
           }">
-            <span>Page ${currentPage + 1} &gt;</span>
+            <span>Next &gt;</span>
           </button>
       `;
     }
