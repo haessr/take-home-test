@@ -1,10 +1,12 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 
+<div  data-controller="github">
+
 <div class="container d-flex justify-content-center">
   <div class="commit-navigation">
     <div class="refresh">
-      <button class="btn btn-success btn-refresh" >
+      <button class="btn btn-success btn-refresh" data-action="github#refresh">
         <span>Refresh</span>
       </button>
     </div>
@@ -13,8 +15,10 @@
   </div>
 </div>
 <div class="container d-flex justify-content-center">
-    <div class="commit-results" data-controller="github">
+    <div class="commit-results">
       <ul class="list-group results">
       </ul>
     </div>
+
+</div>
 </div>

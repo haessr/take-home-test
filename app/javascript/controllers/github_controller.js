@@ -8,14 +8,12 @@ import paginationView from "../views/paginationView";
 export default class extends Controller {
   initialize() {
     console.log(`Accessing commits`);
-    commitsView.addHandlerRender(this.controlAPIResponse);
-    paginationView.parentElement = document.querySelector(".pagination");
-    paginationView.addHandlerClick(this.controlPagination);
+    this.load();
   }
 
-  connect() {
-    console.log(`Connected`);
-  }
+  // connect() {
+  //   console.log(`Connected`);
+  // }
 
   async controlAPIResponse() {
     await model.loadRepoCommits();
@@ -31,5 +29,16 @@ export default class extends Controller {
     // console.log("click");
     // Render NEW pagination buttons
     paginationView.render(model.state);
+  }
+
+  load() {
+    commitsView.addHandlerRender(this.controlAPIResponse);
+    paginationView.parentElement = document.querySelector(".pagination");
+    paginationView.addHandlerClick(this.controlPagination);
+  }
+
+  refresh() {
+    console.log("refresh");
+    this.load();
   }
 }
