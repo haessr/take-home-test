@@ -1,4 +1,4 @@
-import { getJSON, truncateString } from "./helpers";
+import { getJSON } from "./helpers";
 import { GITHUB_API_URL, RESULTS_PER_PAGE, GITHUB_REPO_URL } from "./config";
 
 export const state = {

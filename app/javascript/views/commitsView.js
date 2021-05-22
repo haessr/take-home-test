@@ -3,26 +3,12 @@ import { truncateString } from "../helpers";
 import { GITHUB_REPO_URL, TITLE_LENGTH } from "../config";
 
 class CommitsView extends View {
-  // parentElement = document.querySelector(".results");
-  // parentElement;
   _errorMessage = "Something went wrong!";
-  // _data;
 
   addHandlerRender(handlerFunction) {
     ["pageShow", "load"].forEach((event) =>
       window.addEventListener(event, handlerFunction)
     );
-  }
-
-  addHandlerRefresh(handlerFunction) {
-    // const refreshBtn = document.querySelector(".btn-refresh");
-    // refreshBtn.addEventListener("click", function (e) {
-    // const btn = e.target.closest(".pagination__btn");
-    // if (!btn) return;
-    // console.log("Refresh in process");
-    // const goToPage = Number(btn.dataset.goto);
-    // handlerFunction(goToPage);
-    // });
   }
 
   _generateMarkup() {
