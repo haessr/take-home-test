@@ -20,7 +20,7 @@ You need Ruby, bundler, node.js,
 
 (*on a Mac or Linux machine*)
 
-1. `git clone git@github.com:haessr/take-home-test.git` clone the repo to your local machine. You should create a fork in GitHub if you don't have permission to commit directly to this repo, though. See [our contributing guide](doc/CONTRIBUTING.md) for more detailed instructions.
+1. `git clone git@github.com:haessr/take-home-test.git` clone the repo to your local machine.
 1. `cd take-home-test/`
 1. `bundle install` to install all the Ruby dependencies.
 1. `yarn install` to install all the Javascript dependencies.
