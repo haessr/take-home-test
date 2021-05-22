@@ -6,10 +6,10 @@ import commitsView from "../views/commitsView";
 import paginationView from "../views/paginationView";
 
 export default class extends Controller {
+  static targets = ["inputOwner", "inputRepo", "submitBtn"];
+
   initialize() {
-    // console.log(`Accessing commits`);
     commitsView.addHandlerRender(this.controlAPIResponse);
-    // commitsView.addHandlerClick(this.controlRefresh);
     paginationView.parentElement = document.querySelector(".pagination");
     paginationView.addHandlerClick(this.controlPagination);
   }
@@ -18,15 +18,11 @@ export default class extends Controller {
     await model.loadRepoCommits();
     commitsView.parentElement = document.querySelector(".results");
     commitsView.render(model.getCommitResultsPage());
-    // paginationView.parentElement = document.querySelector(".pagination");
     paginationView.render(model.state);
   }
 
   controlPagination(goToPage) {
-    // Render NEW commits
     commitsView.render(model.getCommitResultsPage(goToPage));
-    // console.log("click");
-    // Render NEW pagination buttons
     paginationView.render(model.state);
   }
 
@@ -40,5 +36,13 @@ export default class extends Controller {
     commitsView.render(model.getCommitResultsPage());
     paginationView.parentElement = document.querySelector(".pagination");
     paginationView.render(model.state);
+  }
+
+  handleSearch(event) {
+    event.preventDefault();
+    model.state.owner = this.inputOwnerTarget.value || "haessr";
+    model.state.repo = this.inputRepoTarget.value || "take-home-test";
+    // console.log(model.state.owner, model.state.repo);
+    this.refresh();
   }
 }
