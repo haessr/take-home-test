@@ -1,1 +1,78 @@
 @import "bootstrap/scss/bootstrap";
+
+.avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+// .content {
+//   height: 100%;
+// }
+
+.commit-body {
+  overflow: auto;
+  // overflow-y: scroll;
+  // max-height: 140px;
+  min-height: 60px;
+}
+
+.commit-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  // background-color: yellow;
+}
+
+.results {
+  width: 70%;
+}
+
+.section-info {
+  width: 90%;
+}
+
+.section-tree {
+  display: flex;
+  width: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 5px 10px;
+}
+
+.avatar-link {
+  text-decoration: none;
+}
+
+.center-p {
+  display: inline-block;
+  margin: auto 0;
+}
+
+.author-link {
+  margin-left: 5px;
+}
+
+.author-area__left {
+  width: 30%;
+}
+
+.autor-area__right {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.tree-link:hover {
+  color: #fff;
+}
