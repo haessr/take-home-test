@@ -8,7 +8,10 @@ import paginationView from "../views/paginationView";
 export default class extends Controller {
   initialize() {
     console.log(`Accessing commits`);
-    this.load();
+    commitsView.addHandlerRender(this.controlAPIResponse);
+    // commitsView.addHandlerClick(this.controlRefresh);
+    paginationView.parentElement = document.querySelector(".pagination");
+    paginationView.addHandlerClick(this.controlPagination);
   }
 
   // connect() {
@@ -31,14 +34,16 @@ export default class extends Controller {
     paginationView.render(model.state);
   }
 
-  load() {
-    commitsView.addHandlerRender(this.controlAPIResponse);
-    paginationView.parentElement = document.querySelector(".pagination");
-    paginationView.addHandlerClick(this.controlPagination);
-  }
+  controlRefresh() {}
 
-  refresh() {
-    console.log("refresh");
-    this.load();
+  load() {}
+
+  async refresh() {
+    console.log("refresh btrn click");
+    await model.loadRepoCommits();
+    commitsView.parentElement = document.querySelector(".results");
+    commitsView.render(model.getCommitResultsPage());
+    paginationView.parentElement = document.querySelector(".pagination");
+    paginationView.render(model.state);
   }
 }
