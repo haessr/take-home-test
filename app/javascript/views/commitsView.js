@@ -1,5 +1,6 @@
 import View from "./View";
-import { GITHUB_REPO_URL } from "../config";
+import { truncateString } from "../helpers";
+import { GITHUB_REPO_URL, TITLE_LENGTH } from "../config";
 
 class CommitsView extends View {
   // parentElement = document.querySelector(".results");
@@ -18,12 +19,21 @@ class CommitsView extends View {
           <div class="section-info">
             <div class="commit-title h5">
               <a href="${commit.url}" target="_blank" class="link-dark">
-                ${commit.message.split("\n").slice(0, 1).join("")}
+                ${truncateString(
+                  commit.message.split("\n").slice(0, 1).join(""),
+                  TITLE_LENGTH
+                )}
               </a>
             </div>
 
             <div class="commit-body">
-              ${commit.message.split("\n").slice(1).join("")}
+              ${commit.message
+                .split("\n")
+                .slice(1)
+                .map((block) => {
+                  return `<p>${block}</p>`;
+                })
+                .join("")}
             </div>
 
             <div class="author-area">
