@@ -12,7 +12,7 @@ export const state = {
 export const loadRepoCommits = async function () {
   try {
     const data = await getJSON(
-      `${GITHUB_API_URL}${state.owner}/${state.repo}/commits`
+      `${GITHUB_API_URL}${state.owner}/${state.repo}/commits?per_page=100`
     );
     if (!data) return;
 
