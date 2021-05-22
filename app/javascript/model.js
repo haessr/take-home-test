@@ -24,3 +24,10 @@ export const loadRepoCommits = async function () {
     console.error(error);
   }
 };
+
+export const getCommitResultsPage = function (page = state.page) {
+  state.page = page;
+  const start = (page - 1) * state.resultsPerPage;
+  const end = page * state.resultsPerPage;
+  return state.commits.slice(start, end);
+};
