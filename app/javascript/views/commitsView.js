@@ -23,7 +23,7 @@ class CommitsView extends View {
       <li class="list-group-item preview">
         <div class="content row d-flex">
           <div class="section-info">
-            <div class="commit-title h5">
+            <div class="commit-title h6">
               <a href="${commit.url}" target="_blank" class="link-dark">
                 ${truncateString(
                   commit.message.split("\n").slice(0, 1).join(""),
