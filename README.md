@@ -26,9 +26,6 @@ You need Ruby, bundler, node.js,
 1. `yarn install` to install all the Javascript dependencies.
 1. `bin/rails db:create db:migrate` does not require running local postgres
 
-### Changing Repo settings
-1. Edit values in `/app/javascript/config.js` REPO_OWNER and REPO_NAME
-
 ### Running the development server
 
 1. `bin/rails db:seed:replant` to delete all existing data and load sample data into the database
