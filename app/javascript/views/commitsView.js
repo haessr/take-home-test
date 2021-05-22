@@ -12,7 +12,9 @@ class CommitsView extends View {
   }
 
   _generateMarkup() {
-    return this._data.map(this._generateMarkupPreview).join("");
+    return this._data.results
+      .map(this._generateMarkupPreview.bind(this._data))
+      .join("");
   }
 
   _generateMarkupPreview(commit) {
@@ -49,7 +51,9 @@ class CommitsView extends View {
                   }">
                 </a>
 
-                <a href="${GITHUB_REPO_URL}/commits?author=${
+                <a href="${GITHUB_REPO_URL}${this.owner}/${
+      this.repo
+    }/commits?author=${
       commit.author_login
     }" target="_blank" class="author-link">
                   ${commit.author_login}
@@ -63,7 +67,7 @@ class CommitsView extends View {
           </div>
 
           <div class="section-tree">
-          <a href="${GITHUB_REPO_URL}/tree/${
+          <a href="${GITHUB_REPO_URL}${this.owner}/${this.repo}/tree/${
       commit.sha
     }" target="_blank" class="btn btn-light">
             <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-code">

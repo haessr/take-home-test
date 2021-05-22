@@ -1,5 +1,22 @@
 <div  data-controller="github">
 
+<div class="container d-flex justify-content-center mt-5">
+  <form class="row">
+    <div class="col-auto">
+      <label for="inputOwner" class="visually-hidden">Owner</label>
+      <input type="text" class="form-control" id="inputOwner" data-github-target="inputOwner" placeholder="Owner">
+    </div>
+    <div class="col-auto">
+      <label for="inputRepo" class="visually-hidden">Repo</label>
+      <input type="text" class="form-control" id="inputRepo" data-github-target="inputRepo" placeholder="Repo">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3" data-github-target="submitBtn" data-action="click->github#handleSearch">Explore</button>
+    </div>
+  </form>
+</div>
+
+
 <div class="container d-flex justify-content-center">
   <div class="commit-navigation">
     <div class="refresh">
